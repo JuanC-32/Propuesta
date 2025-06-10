@@ -1,0 +1,25 @@
+// Mixins
+@mixin button-styles {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 1em 2em;
+    margin: 1em;
+    background: linear-gradient($primary-color, $secondary-color);
+    border: none;
+    color: $text-color-dark;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px $shadow-light;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px $shadow-medium;
+    }
+}
+
+@mixin section-heading {
+    font-size: 1.5rem;
+    color: $text-color-heading-momentos-banda;
+    margin-bottom: 1em;
+}

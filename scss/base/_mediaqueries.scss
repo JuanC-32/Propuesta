@@ -1,0 +1,41 @@
+// Responsive
+@media (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px;
+    }
+
+    .event { // This class isn't in your original CSS directly, but is implied by context if .eventos li is also referred to as .event.
+        width: 100%;
+        padding-left: 40px;
+        text-align: left;
+    }
+
+    .event.left, .event.right {
+        left: 0;
+    }
+
+    .event .content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotos {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .momentos li {
+        font-size: 0.7rem;
+    }
+    button {
+        font-size: 0.8rem;
+        padding: 0.8em 1.5em;
+    }
+    .event, .cancion { // The .event class might refer to the timeline events, adjust if necessary.
+        font-size: 0.7rem;
+        padding: 0.8em;
+    }
+
+    .cancion iframe {
+        width: 100%;
+    }
+}

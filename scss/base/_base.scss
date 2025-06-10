@@ -1,0 +1,27 @@
+// Base Styles
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: $background-color-body;
+    text-align: center;
+}
+
+.screen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr, 1fr));
+    gap: 2em;
+    padding: 4em 2em;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $background-color-body;
+}
+
+.nivel img {
+    width: 200px;
+    height: auto;
+}
+
+button {
+    @include button-styles;
+}

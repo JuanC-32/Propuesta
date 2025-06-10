@@ -1,0 +1,23 @@
+// Momentos Favoritos Section
+.momentos {
+    padding: 2em 1em;
+    background-color: $background-color-momentos;
+
+    h2 {
+        @include section-heading;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background: #ffccde;
+        margin: 0.5em auto;
+        padding: 0.8em 1em;
+        border-radius: 12px;
+        max-width: 600px;
+        font-size: 0.8rem;
+    }
+}

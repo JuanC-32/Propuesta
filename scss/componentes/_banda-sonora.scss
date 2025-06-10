@@ -1,0 +1,36 @@
+// Banda Sonora Section
+.banda-sonora {
+    background-color: $background-color-banda-sonora;
+    padding: 2em 1em;
+    border-top: 4px solid $primary-color;
+
+    h2 {
+        @include section-heading;
+    }
+
+    .cancion {
+        margin: 1.5em auto;
+        max-width: 400px;
+        padding: 1em;
+        background: $background-color-cancion;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px $shadow-light;
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3em;
+        }
+
+        p {
+            font-size: 0.75rem;
+            margin-bottom: 0.5em;
+        }
+
+        iframe,
+        video {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px $shadow-dark;
+            max-width: 100%;
+        }
+    }
+}
