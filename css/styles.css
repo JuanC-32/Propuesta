@@ -1,0 +1,320 @@
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #ffe3f1;
+    text-align: center;
+}
+
+.screen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr, 1fr));
+    gap: 2em;
+    padding: 4em 2em;
+    justify-items: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffe3f1;
+}
+
+.nivel img {
+    width: 200px;
+    height: auto;
+}
+
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 1em 2em;
+    margin: 1em;
+    background: linear-gradient(#ff30b4, #ff88b1);
+    border: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para álbum */
+.album {
+    padding: 2em 1em;
+    background-color: #ffe3f1;
+    border-top: 4px solid #ff30b4;
+    border-bottom: 4px solid #ff30b4;
+}
+
+.album h2 {
+    font-size: 1.5rem;
+    color: #ff008c;
+    margin-bottom: 1em;
+}
+
+.fotos {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, 1fr);
+    /*grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));*/
+    gap: 1em;
+    padding: 0 1em;
+    overflow-y: auto;
+}
+
+.fotos img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.fotos img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para momentos favoritos */
+.momentos {
+    padding: 2em 1em;
+    background-color: #fff0f8;
+}
+
+.momentos h2 {
+    font-size: 1.5rem;
+    color: #d60080;
+    margin-bottom: 1em;
+}
+
+.momentos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.momentos li {
+    background: #ffccde;
+    margin: 0.5em auto;
+    padding: 0.8em 1em;
+    border-radius: 12px;
+    max-width: 600px;
+    font-size: 0.8rem;
+}
+
+/* Banda Sonora */
+.banda-sonora {
+    background-color: #ffe9f4;
+    padding: 2em 1em;
+    border-top: 4px solid #ff30b4;
+}
+
+.banda-sonora h2 {
+    font-size: 1.5rem;
+    color: #d60080;
+    margin-bottom: 1em;
+}
+
+.cancion {
+    margin: 1.5em auto;
+    max-width: 400px;
+    padding: 1em;
+    background: #ffdaee;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cancion h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3em;
+}
+
+.cancion p {
+    font-size: 0.75rem;
+    margin-bottom: 0.5em;
+}
+.cancion iframe,
+.cancion video {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+}
+
+/* Sección del calendario */
+.calendario {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto; /* Centrar y añadir margen superior/inferior */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center; /* Centra el título */
+}
+
+.calendario h2 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    border-bottom: 2px solid #ff30b4; /* Línea decorativa debajo del título */
+    padding-bottom: 15px;
+    display: inline-block; /* Ajusta la línea al ancho del texto */
+}
+
+/* Estilos de la línea de tiempo (lista de eventos) */
+.eventos {
+    list-style: none; /* Elimina los marcadores de lista */
+    padding: 0;
+    margin: 0;
+    position: relative; /* Para la línea vertical */
+}
+
+/* Línea vertical central */
+.eventos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centra la línea */
+    transform: translateX(-50%); /* Ajuste fino para el centrado */
+    width: 4px; /* Grosor de la línea */
+    background-color: #ff30b4; /* Color de la línea */
+    height: 100%;
+    z-index: 1; /* Asegura que esté detrás de los eventos */
+}
+
+/* Estilos para cada evento de la línea de tiempo */
+.eventos li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px; /* Espacio entre eventos */
+    position: relative;
+    z-index: 2; /* Asegura que los eventos estén sobre la línea */
+    width: 35%; /* Ancho de la tarjeta de evento */
+    text-align: center; /* Centrar el contenido dentro de la tarjeta */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eventos li:hover {
+    transform: translateY(-5px); /* Pequeño efecto de elevación al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Alternar eventos a izquierda y derecha */
+.eventos li:nth-child(odd) {
+    float: left; /* Flota a la izquierda */
+    clear: both; /* Limpia floats anteriores */
+}
+
+.eventos li:nth-child(even) {
+    float: right; /* Flota a la derecha */
+    clear: both; /* Limpia floats anteriores */
+}
+
+/* Punto en la línea de tiempo para cada evento */
+.eventos li::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Tamaño del punto */
+    height: 20px;
+    background-color: #ff30b4; /* Color del punto */
+    border-radius: 50%; /* Forma circular */
+    border: 4px solid #ffffff; /* Borde blanco para destacarlo */
+    z-index: 3; /* Asegura que el punto esté encima de la línea */
+}
+
+/* Posición de los puntos para eventos impares (izquierda) */
+.eventos li:nth-child(odd)::after {
+    right: -42px; /* Posiciona el punto a la derecha de la tarjeta */
+}
+
+/* Posición de los puntos para eventos pares (derecha) */
+.eventos li:nth-child(even)::after {
+    left: -42px; /* Posiciona el punto a la izquierda de la tarjeta */
+}
+
+/* Estilos para el texto dentro de los eventos */
+.eventos li strong {
+    display: block; /* Asegura que la fecha ocupe su propia línea */
+    font-size: 1.2em;
+    color: #ff30b4;
+    margin-bottom: 8px;
+}
+
+/* Estilos para las imágenes */
+.eventos li img {
+    max-width: 40%; /* Asegura que la imagen no desborde su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Hace que la imagen sea un bloque para centrarla */
+    margin: 15px auto 0 auto; /* Centra la imagen horizontalmente y añade margen superior */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px;
+    }
+
+    .event {
+        width: 100%;
+        padding-left: 40px;
+        text-align: left;
+    }
+
+    .event.left, .event.right {
+        left: 0;
+    }
+
+    .event .content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotos {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .momentos li {
+        font-size: 0.7rem;
+    }
+    button {
+        font-size: 0.8rem;
+        padding: 0.8em 1.5em;
+    }
+    .event, .cancion {
+        font-size: 0.7rem;
+        padding: 0.8em;
+    }
+
+    .cancion iframe {
+        width: 100%;
+    }
+}
+
+/* Animación de corazones flotando */
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: fixed;
+    bottom: 0;
+    color: #ff5ebd;
+    font-size: 2rem;
+    animation: flotar 5s linear forwards;
+    pointer-events: none;
+    z-index: 9999;
+}
