@@ -1,34 +1,70 @@
-// Album Section
-.album {
-    padding: 2em 1em;
-    background-color: $background-color-body;
-    border-top: 4px solid $primary-color;
-    border-bottom: 4px solid $primary-color;
+// Photo Gallery (Adapting from Album to Instagram-like style)
+.photo-gallery {
+    background-color: $background-color-card;
+    border-radius: $border-radius-medium;
+    padding: 2em; // Generoso padding
+    @include card-shadow;
+    overflow: hidden;
+    width: 100%; // Ocupa el 100% del ancho de su padre
+    max-width: none; // Sin límite de ancho máximo
+    margin: 2em auto; // Un margen superior e inferior para separarlo del contenido adyacente y centrarlo si el padre tiene restricciones
 
     h2 {
-        font-size: 1.5rem;
-        color: $text-color-heading-album;
-        margin-bottom: 1em;
+        @include section-heading;
+        margin-bottom: 1.5em;
     }
 
-    .fotos {
+    .gallery-grid {
         display: grid;
-        grid-auto-flow: column;
-        grid-template-rows: repeat(3, 1fr);
-        gap: 1em;
-        padding: 0 1em;
-        overflow-y: auto;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5em;
+        padding: 0;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+        }
 
         img {
             width: 100%;
-            max-width: 200px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px $shadow-dark;
-            transition: transform 0.3s;
+            height: 180px;
+            object-fit: cover;
+            border-radius: $border-radius-small;
+            border: 1px solid $border-color-instagram-light;
+            box-shadow: 0 1px 3px $shadow-light;
+            transition: transform $animation-speed-fast $animation-timing-ease-in-out,
+                        box-shadow $animation-speed-fast $animation-timing-ease-in-out,
+                        border-color $animation-speed-fast $animation-timing-ease-in-out;
+
+            // Animación de aparición de cada imagen
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSlideUp $animation-speed-slow $animation-timing-ease-out forwards;
+            // Usaremos JavaScript para establecer el 'animation-delay' para un efecto escalonado
 
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.03);
+                box-shadow: 0 4px 8px $shadow-medium;
+                border-color: $primary-color;
             }
         }
+    }
+}
+
+// Keyframes para la animación de aparición de imágenes
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

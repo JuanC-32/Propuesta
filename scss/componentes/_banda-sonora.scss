@@ -1,36 +1,47 @@
-// Banda Sonora Section
-.banda-sonora {
-    background-color: $background-color-banda-sonora;
-    padding: 2em 1em;
-    border-top: 4px solid $primary-color;
+// Music Player / Favorite Tracks (Adapting from Banda Sonora)
+.music-favorites {
+    background-color: $background-color-card;
+    border-radius: $border-radius-medium;
+    padding: 2em 1.5em;
+    @include card-shadow;
 
     h2 {
         @include section-heading;
     }
 
-    .cancion {
-        margin: 1.5em auto;
-        max-width: 400px;
-        padding: 1em;
-        background: $background-color-cancion;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px $shadow-light;
+    .track-list {
+        display: grid;
+        gap: 1.5em; // Space between tracks
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Allows multiple columns for tracks
 
-        h3 {
-            font-size: 1rem;
-            margin-bottom: 0.3em;
-        }
+        .track-card {
+            background: $background-color-body; // Lighter background for individual tracks
+            border-radius: $border-radius-small;
+            padding: 1em;
+            box-shadow: 0 2px 6px $shadow-light;
+            text-align: left; // Align text within track card
+            @include hover-effect;
 
-        p {
-            font-size: 0.75rem;
-            margin-bottom: 0.5em;
-        }
+            h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.3em;
+                color: $text-color-heading-secondary;
+            }
 
-        iframe,
-        video {
-            border-radius: 12px;
-            box-shadow: 0 4px 12px $shadow-dark;
-            max-width: 100%;
+            p {
+                font-size: 0.85rem;
+                color: $text-color-light;
+                margin-bottom: 0.8em;
+            }
+
+            iframe,
+            video {
+                border-radius: $border-radius-small;
+                box-shadow: 0 4px 10px $shadow-medium;
+                max-width: 100%;
+                aspect-ratio: 16 / 9; // Maintain aspect ratio for videos/iframes
+                display: block; // Remove extra space below
+            }
         }
     }
 }

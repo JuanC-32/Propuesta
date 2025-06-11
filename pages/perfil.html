@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mi Perfil - LoveNet</title>
+    <link rel="stylesheet" href="../css/estilos.css"/>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">💖LoveNet</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./perfil.html">Mi Perfil</a></li>
+                <li><a href="./album.html">Fotos</a></li>
+                <li><a href="./musica.html">Música</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <img src="../assets/images/profile-placeholder.jpg" alt="Tu Perfil" class="profile-pic"/>
+            <span>Camilo</span>
+        </div>
+    </header>
+
+    <div class="main-layout container">
+        <aside class="left-sidebar">
+            <section class="profile-card">
+                <div class="profile-header">
+                    <img src="../assets/images/profile-placeholder.jpg" alt="Tu Avatar" class="profile-avatar"/>
+                    <h2>Brenda & Camilo</h2>
+                    <p>Nuestra historia de amor en píxeles. ❤️</p>
+                    <button>Editar Perfil</button>
+                </div>
+                <div class="about-section">
+                    <h3>💖 Nuestros Momentos Favoritos</h3>
+                    <ul>
+                        <li>La vez que vimos el atardecer en la montaña.</li>
+                        <li>Cuando cocinamos juntos por primera vez.</li>
+                        <li>Nuestra canción bailada en pijama.</li>
+                    </ul>
+                </div>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <section class="profile-details card">
+                <h2>Información General</h2>
+                <p><strong>Nombres:</strong> Brenda & Camilo</p>
+                <p><strong>Fecha de inicio:</strong> 20 de Marzo de 2025</p>
+                <p><strong>Estado:</strong> Felices y enamorados</p>
+                <p><strong>Intereses:</strong> Viajar, cocinar, música, fotografía.</p>
+                <p><strong>Bio:</strong> Compartiendo nuestra aventura diaria, un recuerdo a la vez. ¡Bienvenido a nuestro rincón digital del amor!</p>
+            </section>
+
+            <section class="profile-links card">
+                <h2>Explora Más</h2>
+                <button onclick="location.href='album.html'">📸 Ver Álbum Completo</button>
+                <button onclick="location.href='musica.html'">🎶 Ver Nuestra Música</button>
+            </section>
+        </main>
+        <aside class="right-sidebar">
+            <h3>Actividad Reciente</h3>
+            <p>Brenda subió 5 fotos nuevas a "Viaje Glamping".</p>
+            <p>Camilo añadió "Perfect" a la banda sonora.</p>
+            <p>Brenda actualizó su estado.</p>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 LoveNet. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="../js/game.js"></script>
+</body>
+</html>

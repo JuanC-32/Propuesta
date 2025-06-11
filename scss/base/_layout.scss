@@ -1,0 +1,37 @@
+// Main Layout for Social Feed
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr; // Default for mobile
+    gap: 1.5em;
+    padding: 1.5em $spacing-unit;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        grid-template-columns: $sidebar-width 1fr; // Left sidebar, main content
+        gap: 2em;
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: $sidebar-width 1fr $sidebar-width; // Left sidebar, main content, right sidebar
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        display: none; // Hidden by default on small screens
+        background-color: $background-color-sidebar;
+        border-radius: $border-radius-medium;
+        padding: 1.5em;
+        @include card-shadow;
+
+        @media (min-width: 768px) {
+            display: block; // Show on larger screens
+        }
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+}

@@ -1,0 +1,30 @@
+// Footer
+.footer {
+    background-color: $background-color-header-footer;
+    color: $text-color-light;
+    padding: 1.5em $spacing-unit;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 2em;
+    border-top: 1px solid $border-color-light;
+
+    // Animación de aparición del footer
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp $animation-speed-slow $animation-timing-ease-out forwards;
+    animation-delay: $animation-delay-base * 3; // Aparece más tarde
+
+    p {
+        margin-bottom: 0.5em;
+    }
+
+    .footer-links {
+        a {
+            color: $accent-color;
+            margin: 0 0.5em;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

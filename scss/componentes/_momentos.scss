@@ -1,23 +1,66 @@
-// Momentos Favoritos Section
-.momentos {
-    padding: 2em 1em;
-    background-color: $background-color-momentos;
+// Profile Card (Adapting from Momentos)
+.profile-card {
+    background-color: $background-color-card;
+    border-radius: $border-radius-medium;
+    padding: 1.5em;
+    text-align: center;
+    @include card-shadow;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp $animation-speed-slow $animation-timing-ease-out forwards;
+    animation-delay: $animation-delay-base * 2; // Aparece un poco después de la página
 
-    h2 {
-        @include section-heading;
+    .profile-header {
+        margin-bottom: 1.5em;
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid $primary-color;
+            margin: 0 auto 1em auto;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3em;
+            color: $text-color-heading-primary;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: $text-color-light;
+            margin-bottom: 1em;
+        }
+
+        button {
+            @include button-primary;
+            margin-top: 0.5em;
+            display: inline-block;
+        }
     }
 
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+    .about-section {
+        border-top: 1px solid $border-color-light;
+        padding-top: 1.5em;
+        text-align: left;
 
-    li {
-        background: #ffccde;
-        margin: 0.5em auto;
-        padding: 0.8em 1em;
-        border-radius: 12px;
-        max-width: 600px;
-        font-size: 0.8rem;
+        h3 {
+            @include sub-section-heading;
+            text-align: center;
+        }
+
+        ul {
+            li {
+                background: $background-color-body; // Lighter background for list items
+                margin: 0.5em 0;
+                padding: 0.8em 1em;
+                border-radius: $border-radius-small;
+                font-size: 0.85rem;
+                color: $text-color-dark;
+                box-shadow: 0 1px 3px $shadow-light;
+            }
+        }
     }
 }

@@ -1,41 +1,88 @@
 // Responsive
-@media (max-width: 768px) {
-    .timeline-container::after {
-        left: 20px;
+// Responsive Adjustments
+@media (max-width: 1023px) {
+    .main-layout {
+        grid-template-columns: 1fr; // Stack content on medium screens
+        .right-sidebar {
+            display: none; // Hide right sidebar on medium screens
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        .nav-menu {
+            margin-top: 0.8em;
+            gap: 1em;
+        }
+        .user-actions {
+            margin-top: 0.8em;
+        }
     }
 
-    .event { // This class isn't in your original CSS directly, but is implied by context if .eventos li is also referred to as .event.
-        width: 100%;
-        padding-left: 40px;
-        text-align: left;
+    .main-layout {
+        padding: 1em;
+        .left-sidebar {
+            display: block; // Or you might hide this too if you want full-width main content
+            // If you want it always visible, adjust its position or make it a top section
+        }
     }
 
-    .event.left, .event.right {
-        left: 0;
+    // Adjustments for timeline on small screens
+    .timeline-section .timeline-events {
+        &::before {
+            left: 20px; // Keep line to the left
+            transform: translateX(0);
+        }
+        li {
+            width: calc(100% - 40px); // Full width minus space for line
+            float: none;
+            clear: both;
+            margin-left: 40px; // Push content right
+            &::after {
+                left: -32px; // Keep dot to the left
+                right: auto;
+            }
+        }
     }
 
-    .event .content {
-        max-width: 100%;
+    .photo-gallery .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        img {
+            height: 100px; // Smaller images on mobile
+        }
+    }
+
+    .music-favorites .track-list {
+        grid-template-columns: 1fr; // Single column for tracks on mobile
+    }
+
+    // General font size adjustments for small screens
+    body {
+        font-size: 0.9rem;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.1rem; }
+    button {
+        font-size: 0.8rem;
+        padding: 0.6em 1.2em;
     }
 }
 
 @media (max-width: 480px) {
-    .fotos {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    .header .logo {
+        font-size: 1.2rem;
     }
-    .momentos li {
-        font-size: 0.7rem;
-    }
-    button {
-        font-size: 0.8rem;
-        padding: 0.8em 1.5em;
-    }
-    .event, .cancion { // The .event class might refer to the timeline events, adjust if necessary.
-        font-size: 0.7rem;
-        padding: 0.8em;
+    .header .nav-menu {
+        font-size: 0.9rem;
     }
 
-    .cancion iframe {
-        width: 100%;
+    .profile-card .profile-header h2 {
+        font-size: 1.5rem;
+    }
+    .profile-card .about-section ul li {
+        font-size: 0.75rem;
     }
 }

@@ -3,33 +3,79 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>📸 Álbum de Recuerdos</title>
+    <title>📸 Álbum de Recuerdos - LoveNet</title>
     <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-    <nav class="nav-bar">
-        <button onclick="location.href='../index.html'">🏠 Menú</button>
-    </nav>
-    <section class="album">
-        <h2>📸 Nuestro Álbum de Recuerdos</h2>
-        <div class="fotos">
-            <img src="../assets/images/IMG_4242.jpg" alt="Foto 1 con mi novia"/>
-            <img src="../assets/images/20190701_191632.jpg" alt="Foto 2 con mi novia"/>
-            <img src="../assets/images/IMG_7998_Original.jpg" alt="Foto 3 con mi novia"/>
-            <img src="../assets/images/IMG_0482.jpg" alt="Foto 4 con mi novia"/>
-            <img src="../assets/images/IMG_7999.jpg" alt="Foto 5 con mi novia"/>
-            <img src="../assets/images/IMG_0484.jpg" alt="Foto 6 con mi novia"/>
-            <img src="../assets/images/IMG_8005.jpg" alt="Foto 7 con mi novia"/>
-            <img src="../assets/images/glamping.jpg" alt="Foto 8 con mi novia"/>
-            <img src="../assets/images/20190701_191704.jpg" alt="Foto 9 con mi novia"/>
-            <img src="../assets/images/8337E599-477C-47C3-8C0A-CB3B8263744E.jpg" alt="Foto 10 con mi novia"/>
-            <img src="../assets/images/IMG_8478.JPG" alt="Foto 11 con mi novia"/>
-            <img src="../assets/images/IMG_8420.JPG" alt="Foto 12 con mi novia"/>
-            <img src="../assets/images/IMG_0938.jpg" alt="Foto 13 con mi novia"/>
-            <img src="../assets/images/IMG_7878.jpg" alt="Foto 14 con mi novia"/>
-            <img src="../assets/images/IMG_4242.jpg" alt="Foto 15 con mi novia"/>
+    <header class="header">
+        <a href="../index.html" class="logo">💖LoveNet</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./perfil.html">Mi Perfil</a></li>
+                <li><a href="./album.html">Fotos</a></li>
+                <li><a href="./musica.html">Música</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <img src="../assets/images/profile-placeholder.jpg" alt="Tu Perfil" class="profile-pic"/>
+            <span>Camilo</span>
         </div>
-    </section>
-<script src="../js/game.js"></script>
+    </header>
+
+    <div class="main-layout container">
+        <main class="main-content full-width"> <section class="photo-gallery">
+                <h2>📸 Nuestro Álbum de Recuerdos</h2>
+                <div class="gallery-grid">
+                    <img src="../assets/images/IMG_4242.jpg" alt="Foto 1 con mi novia"/>
+                    <img src="../assets/images/20190701_191632.jpg" alt="Foto 2 con mi novia"/>
+                    <img src="../assets/images/IMG_7998_Original.jpg" alt="Foto 3 con mi novia"/>
+                    <img src="../assets/images/IMG_0482.jpg" alt="Foto 4 con mi novia"/>
+                    <img src="../assets/images/IMG_7999.jpg" alt="Foto 5 con mi novia"/>
+                    <img src="../assets/images/IMG_0484.jpg" alt="Foto 6 con mi novia"/>
+                    <img src="../assets/images/IMG_8005.jpg" alt="Foto 7 con mi novia"/>
+                    <img src="../assets/images/glamping.jpg" alt="Foto 8 con mi novia"/>
+                    <img src="../assets/images/20190701_191704.jpg" alt="Foto 9 con mi novia"/>
+                    <img src="../assets/images/8337E599-477C-47C3-8C0A-CB3B8263744E.jpg" alt="Foto 10 con mi novia"/>
+                    <img src="../assets/images/IMG_8478.JPG" alt="Foto 11 con mi novia"/>
+                    <img src="../assets/images/IMG_8420.JPG" alt="Foto 12 con mi novia"/>
+                    <img src="../assets/images/IMG_0938.jpg" alt="Foto 13 con mi novia"/>
+                    <img src="../assets/images/IMG_7878.jpg" alt="Foto 14 con mi novia"/>
+                    <img src="../assets/images/IMG_4242.jpg" alt="Foto 15 con mi novia"/>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 LoveNet. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="../js/game.js"></script>
+    <script>
+        // JavaScript para animaciones escalonadas
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryImages = document.querySelectorAll('.photo-gallery .gallery-grid img');
+            galleryImages.forEach((img, index) => {
+                img.style.animationDelay = `${index * 0.05}s`; // Pequeño retraso para cada imagen
+            });
+
+            // Repite para otras secciones si quieres animación escalonada (ej. timeline-events li, track-card)
+            const timelineEvents = document.querySelectorAll('.timeline-section .timeline-events li');
+            timelineEvents.forEach((event, index) => {
+                event.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const musicTracks = document.querySelectorAll('.music-favorites .track-list .track-card');
+            musicTracks.forEach((track, index) => {
+                track.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>

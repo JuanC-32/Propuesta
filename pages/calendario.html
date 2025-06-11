@@ -3,31 +3,85 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>📅 Calendario de Amor</title>
+    <title>📅 Calendario de Amor - LoveNet</title>
     <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-    <nav class="nav-bar">
-        <button onclick="location.href='../index.html'">🏠 Menú</button>
-    </nav>
-    <section class="calendario">
-        <h2>📅 Nuestro Calendario de Amor</h2>
-        <ul class="eventos">
-            <li><strong>20 Marzo 2025:</strong> Nuestra primera cita 🍦
-            <img src="../assets/images/primera-cita.jpg" alt="Nuestra primera cita">
-            </li>
-            <li><strong>19 Abril 2025:</strong> Viaje Glamping ⛺
-                <img src="../assets/images/glamping.jpg" alt="Viaje a glamping">
-            </li>
-            <li><strong>17 Mayo 2025:</strong> Un dia especial ❤️
-                <img src="../assets/images/dia-especial.jpg" alt="Un dia especial">
-            </li>
-            <li><strong>07 Junio 2025:</strong> Tu cambio de look 😍
-                <img src="../assets/images/cambio-de-look.jpg" alt="Tu cambio de look">
-            </li>
-                
-        </ul>
-    </section>
-<script src="../js/game.js"></script>
+    <header class="header">
+        <a href="../index.html" class="logo">💖LoveNet</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./perfil.html">Mi Perfil</a></li>
+                <li><a href="./album.html">Fotos</a></li>
+                <li><a href="./musica.html">Música</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <img src="../assets/images/profile-placeholder.jpg" alt="Tu Perfil" class="profile-pic"/>
+            <span>Camilo</span>
+        </div>
+    </header>
+
+    <div class="main-layout container">
+        <main class="main-content full-width">
+            <section class="timeline-section">
+                <h2>📅 Nuestro Calendario de Amor</h2>
+                <ul class="timeline-events">
+                    <li>
+                        <span class="event-date">20 Marzo 2025:</span>
+                        <span class="event-title">Nuestra primera cita 🍦</span>
+                        <img src="../assets/images/primera-cita.jpg" alt="Nuestra primera cita">
+                    </li>
+                    <li>
+                        <span class="event-date">19 Abril 2025:</span>
+                        <span class="event-title">Viaje Glamping ⛺</span>
+                        <img src="../assets/images/glamping.jpg" alt="Viaje a glamping">
+                    </li>
+                    <li>
+                        <span class="event-date">17 Mayo 2025:</span>
+                        <span class="event-title">Un dia especial ❤️</span>
+                        <img src="../assets/images/dia-especial.jpg" alt="Un dia especial">
+                    </li>
+                    <li>
+                        <span class="event-date">07 Junio 2025:</span>
+                        <span class="event-title">Tu cambio de look 😍</span>
+                        <img src="../assets/images/cambio-de-look.jpg" alt="Tu cambio de look">
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 LoveNet. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="../js/game.js"></script>
+    <script>
+        // JavaScript para animaciones escalonadas
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryImages = document.querySelectorAll('.photo-gallery .gallery-grid img');
+            galleryImages.forEach((img, index) => {
+                img.style.animationDelay = `${index * 0.05}s`; // Pequeño retraso para cada imagen
+            });
+
+            // Repite para otras secciones si quieres animación escalonada (ej. timeline-events li, track-card)
+            const timelineEvents = document.querySelectorAll('.timeline-section .timeline-events li');
+            timelineEvents.forEach((event, index) => {
+                event.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const musicTracks = document.querySelectorAll('.music-favorites .track-list .track-card');
+            musicTracks.forEach((track, index) => {
+                track.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>

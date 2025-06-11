@@ -3,26 +3,80 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>🎶 Nuestra Banda Sonora</title>
+    <title>🎶 Nuestra Banda Sonora - LoveNet</title>
     <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-    <nav class="nav-bar">
-        <button onclick="location.href='../index.html'">🏠 Menú</button>
-    </nav>
-    <section class="banda-sonora">
-        <h2>🎶 Nuestra Banda Sonora</h2>
-        <div class="cancion">
-            <h3>🌹 "Perfect" – Ed Sheeran</h3>
-            <p>La canción que sonaba en nuestra primera cita.</p>
-            <iframe width="300" height="100" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0" allowfullscreen></iframe>
+    <header class="header">
+        <a href="../index.html" class="logo">💖LoveNet</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./perfil.html">Mi Perfil</a></li>
+                <li><a href="./album.html">Fotos</a></li>
+                <li><a href="./musica.html">Música</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <img src="../assets/images/profile-placeholder.jpg" alt="Tu Perfil" class="profile-pic"/>
+            <span>Camilo</span>
         </div>
-        <div class="cancion">
-            <h3>💃 "Bailando" – Enrique Iglesias</h3>
-            <p>La que siempre bailamos en pijama.</p>
-            <iframe width="300" height="100" src="https://www.youtube.com/embed/b8I-7Wk_Vbc" frameborder="0" allowfullscreen></iframe>
+    </header>
+
+    <div class="main-layout container">
+        <main class="main-content full-width">
+            <section class="music-favorites">
+                <h2>🎶 Nuestra Banda Sonora</h2>
+                <div class="track-list">
+                    <div class="track-card">
+                        <h3>🌹 "Perfect" – Ed Sheeran</h3>
+                        <p>La canción que sonaba en nuestra primera cita.</p>
+                        <iframe width="300" height="100" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="track-card">
+                        <h3>💃 "Bailando" – Enrique Iglesias</h3>
+                        <p>La que siempre bailamos en pijama.</p>
+                        <iframe width="300" height="100" src="https://www.youtube.com/embed/b8I-7Wk_Vbc" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="track-card">
+                        <h3>🎵 "Thinking Out Loud" - Ed Sheeran</h3>
+                        <p>Otro clásico que nos encanta.</p>
+                        <iframe width="300" height="100" src="https://www.youtube.com/embed/lp-EO5I60KA" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 LoveNet. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
         </div>
-    </section>
-<script src="../js/game.js"></script>
+    </footer>
+
+    <script src="../js/game.js"></script>
+    <script>
+        // JavaScript para animaciones escalonadas
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryImages = document.querySelectorAll('.photo-gallery .gallery-grid img');
+            galleryImages.forEach((img, index) => {
+                img.style.animationDelay = `${index * 0.05}s`; // Pequeño retraso para cada imagen
+            });
+
+            // Repite para otras secciones si quieres animación escalonada (ej. timeline-events li, track-card)
+            const timelineEvents = document.querySelectorAll('.timeline-section .timeline-events li');
+            timelineEvents.forEach((event, index) => {
+                event.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const musicTracks = document.querySelectorAll('.music-favorites .track-list .track-card');
+            musicTracks.forEach((track, index) => {
+                track.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>

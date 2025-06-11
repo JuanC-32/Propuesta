@@ -1,25 +1,64 @@
 // Mixins
-@mixin button-styles {
+@mixin card-shadow {
+    box-shadow: 0 2px 4px $shadow-light, 0 8px 16px $shadow-light;
+}
+
+@mixin hover-effect {
+    transition: transform $animation-speed-fast $animation-timing-ease-in-out,
+                box-shadow $animation-speed-fast $animation-timing-ease-in-out;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px $shadow-medium;
+    }
+}
+
+@mixin button-primary {
     font-family: inherit;
     font-size: 1rem;
     padding: 1em 2em;
-    margin: 1em;
     background: linear-gradient($primary-color, $secondary-color);
     border: none;
-    color: $text-color-dark;
+    color: $white-color;
     cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 6px $shadow-light;
+    border-radius: $border-radius-small;
+    transition: all $animation-speed-fast $animation-timing-ease-in-out; // Transición para todas las propiedades
 
     &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 10px $shadow-medium;
+        transform: scale(1.05); // Efecto de zoom
+        box-shadow: 0 6px 10px $shadow-strong; // Sombra más pronunciada
+        filter: brightness(1.1); // Un ligero brillo
+    }
+
+    &:active {
+        transform: scale(0.98); // Efecto de "presión" al hacer click
+        box-shadow: 0 2px 4px $shadow-medium;
+    }
+}
+
+@mixin button-secondary {
+    @include button-primary;
+    background: $border-color-light;
+    color: $text-color-dark;
+    box-shadow: none;
+
+    &:hover {
+        background: darken($border-color-light, 5%);
+        color: $text-color-dark;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px $shadow-light;
     }
 }
 
 @mixin section-heading {
-    font-size: 1.5rem;
-    color: $text-color-heading-momentos-banda;
+    font-size: 1.8rem;
+    color: $text-color-heading-primary;
+    margin-bottom: 1.5em;
+    text-align: center; // Centrar el texto en los títulos de sección
+}
+
+@mixin sub-section-heading {
+    font-size: 1.2rem;
+    color: $text-color-heading-secondary;
     margin-bottom: 1em;
 }

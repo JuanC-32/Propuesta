@@ -3,21 +3,95 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mapa del Amor</title>
-    <link rel="stylesheet" href="css/estilos.css"/>
-</head>
+    <title>Mi Red Social de Amor</title>
+    <link rel="stylesheet" href="css/estilos.css"/> </head>
 <body>
-    <div class="screen">
-        <h2>🌟 Explora Nuestra Historia de Amor</h2>
-        <button onclick="location.href='pages/nivel1.html'">📚 Donde nos conocimos</button>
-        <button onclick="location.href='pages/nivel2.html'">🍦 Primera cita</button>
-        <button onclick="location.href='pages/nivel3.html'">⛺ Aventura Glamping</button>
-        <button onclick="location.href='pages/album.html'">📸 Álbum de Fotos</button>
-        <button onclick="location.href='pages/momentos.html'">💖 Momentos Favoritos</button>
-        <button onclick="location.href='pages/musica.html'">🎶 Nuestra Música</button>
-        <button onclick="location.href='pages/calendario.html'">📅 Calendario de Amor</button>
-        <button onclick="location.href='pages/final.html'">❤️ Propuesta</button>
+    <header class="header">
+        <a href="index.html" class="logo">💖LoveNet</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pages/perfil.html">Mi Perfil</a></li> <li><a href="pages/album.html">Fotos</a></li>
+                <li><a href="pages/musica.html">Música</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <img src="assets/images/profile-placeholder.jpg" alt="Tu Perfil" class="profile-pic"/>
+            <span>Camilo</span>
+        </div>
+    </header>
+
+    <div class="main-layout container">
+        <aside class="left-sidebar">
+            <section class="profile-card">
+                <div class="profile-header">
+                    <img src="assets/images/profile-placeholder.jpg" alt="Tu Avatar" class="profile-avatar"/>
+                    <h2>Brenda & Camilo</h2>
+                    <p>Nuestra historia de amor en píxeles. ❤️</p>
+                    <button>Editar Perfil</button>
+                </div>
+                <div class="about-section">
+                    <h3>💖 Nuestros Momentos Favoritos</h3>
+                    <ul>
+                        <li>La vez que vimos el atardcer en la montaña.</li>
+                        <li>Cuando cocinamos juntos por primera vez.</li>
+                        <li>Nuestra canción bailada en pijama.</li>
+                    </ul>
+                </div>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <section class="timeline-section">
+                <h2>📅 Nuestro Calendario de Amor</h2>
+                <ul class="timeline-events">
+                    <li>
+                        <span class="event-date">20 Marzo 2025:</span>
+                        <span class="event-title">Nuestra primera cita 🍦</span>
+                        <img src="assets/images/primera-cita.jpg" alt="Nuestra primera cita">
+                    </li>
+                    <li>
+                        <span class="event-date">19 Abril 2025:</span>
+                        <span class="event-title">Viaje Glamping ⛺</span>
+                        <img src="assets/images/glamping.jpg" alt="Viaje a glamping">
+                    </li>
+                    <li>
+                        <span class="event-date">17 Mayo 2025:</span>
+                        <span class="event-title">Un dia especial ❤️</span>
+                        <img src="assets/images/dia-especial.jpg" alt="Un dia especial">
+                    </li>
+                    <li>
+                        <span class="event-date">07 Junio 2025:</span>
+                        <span class="event-title">Tu cambio de look 😍</span>
+                        <img src="assets/images/cambio-de-look.jpg" alt="Tu cambio de look">
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <aside class="right-sidebar">
+            <h3>Amigos Recientes</h3>
+            <div class="recent-friends">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <img src="assets/images/friend1.jpg" alt="Amigo 1" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <span>Amigo 1</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <img src="assets/images/friend2.jpg" alt="Amigo 2" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <span>Amigo 2</span>
+                </div>
+            </div>
+        </aside>
     </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 LoveNet. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
 
     <script src="js/game.js"></script>
 </body>

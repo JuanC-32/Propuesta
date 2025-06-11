@@ -8,13 +8,59 @@
     <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
 <body>
-    <nav class="nav-bar">
-        <button onclick="location.href='../index.html'">🏠 Menú</button>
-    </nav>
-    <div class="nivel">
-        <h1>🍦 Nivel 2: Nuestra primera cita</h1>
-        <p>Un parque, muchas risas... y helado de chocolate. ¿Te acuerdas?</p>
+    <header class="header">
+        <a href="../index.html" class="logo">💖LoveNet</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./perfil.html">Mi Perfil</a></li>
+                <li><a href="./album.html">Fotos</a></li>
+                <li><a href="./musica.html">Música</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <img src="../assets/images/profile-placeholder.jpg" alt="Tu Perfil" class="profile-pic"/>
+            <span>Camilo</span>
+        </div>
+    </header>
+
+    <div class="main-layout container">
+        <main class="main-content full-width">
+            <div class="nivel card"> <h1>🍦 Nivel 2: Nuestra primera cita</h1>
+                <p>Un parque, muchas risas... y helado de chocolate. ¿Te acuerdas?</p>
+            </div>
+        </main>
     </div>
-<script src="../js/game.js"></script>
+
+    <footer class="footer">
+        <p>&copy; 2025 LoveNet. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="../js/game.js"></script>
+    <script>
+        // JavaScript para animaciones escalonadas
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryImages = document.querySelectorAll('.photo-gallery .gallery-grid img');
+            galleryImages.forEach((img, index) => {
+                img.style.animationDelay = `${index * 0.05}s`; // Pequeño retraso para cada imagen
+            });
+
+            // Repite para otras secciones si quieres animación escalonada (ej. timeline-events li, track-card)
+            const timelineEvents = document.querySelectorAll('.timeline-section .timeline-events li');
+            timelineEvents.forEach((event, index) => {
+                event.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            const musicTracks = document.querySelectorAll('.music-favorites .track-list .track-card');
+            musicTracks.forEach((track, index) => {
+                track.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>
